@@ -1,0 +1,43 @@
+<div class="card-top container-fluid">
+    <div class="container d-flex justify-content-between">
+        <div class="item">
+            <a>
+                <img src="https://media.tenor.com/VJ_kKBFGlzoAAAAM/bubududu-dance.gif" alt="">
+                <h6>CATEGORY #1</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a>
+                <img src="https://i.pinimg.com/originals/8f/41/27/8f41279d2c5b6711f7282caf7e99e48e.gif" alt="">
+                <h6>CATEGORY #2</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a>
+                <img src="https://media.tenor.com/0ks_QifP-5YAAAAM/ositos.gif" alt="">
+                <h6>CATEGORY #3</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a>
+                <img src="https://media.tenor.com/UXAIn1XmzMkAAAAM/bubududu-motor.gif" alt="">
+                <h6>CATEGORY #4</h6>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row d-flex justify-content-evenly">
+        <ng-container *ngFor="let item of productList">
+            <div class="card col-md-2">
+                <img src="{{item.image}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Price:</strong> {{item.price | currency:'฿'}}</p>
+                <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+            </div>
+        </ng-container>
+        
+    </div>
+</div>
